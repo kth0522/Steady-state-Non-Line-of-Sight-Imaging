@@ -82,12 +82,14 @@ int main() {
 
 	createplaneobj();
 
-	string parentFlder = "mnist dataset which contains 60000 mnist images";
+	string parentFlder = "/home/taehokim/workspace/project/NLOSRender/mnist_dataset";
 
 	// vector<string> folders;
 	// getFiles(parentFlder, folders);
 
-	string parentSvFolder = "your save folder";
+	string parentSvFolder = "/home/taehokim/workspace/project/NLOSRender/results";
+	string workingDir = "/home/taehokim/workspace/project/NLOSRender/render-mnist";
+
 	for (int i = 0; i < 1; i++) {
 		string svfolder = parentSvFolder + "/" + to_string(i);
 
@@ -115,11 +117,12 @@ int main() {
 		string imname = parentFlder + "/" + string(imidx);
 		cout << "imname" << "\t" << imname << endl;
 		cv::Mat im = cv::imread(imname);
-		cv::imwrite("./re.png", im);
+//		cv::imshow("img", im);
+		cv::imwrite("/home/taehokim/workspace/project/NLOSRender/render-mnist/re.png", im);
 		string name = "obj.obj";
 
 		bool suc = true;
-		mesh tmpobj = tmp->loadobj("./", name, suc);
+		mesh tmpobj = tmp->loadobj(workingDir, name, suc);
 		if (!suc) {
 			continue;
 		} else {

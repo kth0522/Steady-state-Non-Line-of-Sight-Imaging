@@ -100,10 +100,11 @@ GLuint render::LoadShaders(const char * vertex_file_path,
 //////////////////////////////////////////////////////////////////
 void render::programobj() {
 	//////////////////////////////////////////////////////////////////////
+    string working_dir = "/home/taehokim/workspace/project/NLOSRender/";
 	// Create and compile our GLSL program from the shaders
-	programID = LoadShaders("pointlight.vertexshader",
-			"pointlight.fragmentshader");
-	programQuad = LoadShaders("p2.vertexshader", "p2.fragmentshader");
+	programID = LoadShaders("/home/taehokim/workspace/project/NLOSRender/render-mnist/pointlight.vertexshader",
+			"/home/taehokim/workspace/project/NLOSRender/render-mnist/pointlight.fragmentshader");
+	programQuad = LoadShaders("/home/taehokim/workspace/project/NLOSRender/render-mnist/p2.vertexshader", "/home/taehokim/workspace/project/NLOSRender/render-mnist/p2.fragmentshader");
 
 	// first program
 	glUseProgram(programID);
