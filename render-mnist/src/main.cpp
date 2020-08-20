@@ -79,93 +79,142 @@ void createplaneobj() {
 }
 
 int main() {
+    bool is_mnist = true;
 
-	createplaneobj();
+    string parentFlder = "/home/taehokim/workspace/project/NLOSRender/mnist_dataset";
+    string parentSvFolder = "/home/taehokim/workspace/project/NLOSRender/results";
+    string tempSvFolder = "/home/taehokim/workspace/project/NLOSRender/results/cat";
+    string workingDir = "/home/taehokim/workspace/project/NLOSRender/render-mnist";
 
-	string parentFlder = "/home/taehokim/workspace/project/NLOSRender/mnist_dataset";
+    if(is_mnist) {
+        createplaneobj();
 
-	// vector<string> folders;
-	// getFiles(parentFlder, folders);
+        for (int i = 0; i < 1; i++) {
+            string svfolder = parentSvFolder + "/" + to_string(i);
 
-	string parentSvFolder = "/home/taehokim/workspace/project/NLOSRender/results";
-	string workingDir = "/home/taehokim/workspace/project/NLOSRender/render-mnist";
+            char cmd[256];
+            sprintf(cmd, "mkdir %s", svfolder.c_str());
+            system(cmd);
+        }
 
-	for (int i = 0; i < 1; i++) {
-		string svfolder = parentSvFolder + "/" + to_string(i);
+        int height = 256;
+        int width = 256;
 
-		char cmd[256];
-		sprintf(cmd, "mkdir %s", svfolder.c_str());
-		system(cmd);
-	}
+        int maxsz = 50;
 
-	int height = 256;
-	int width = 256;
+        render *tmp = new render(height, width, maxsz);
+        tmp->initializecuda();
+        tmp->programobj();
 
-	int maxsz = 50;
+        int stepbe = 0;
+        int stepen = 60000;
+        int step = 0;
 
-	render *tmp = new render(height, width, maxsz);
-	tmp->initializecuda();
-	tmp->programobj();
+        for (int i = 0; i < 60000; i++) {
+            char imidx[50];
+            sprintf(imidx, "im%05d.png", i);
+            string imname = parentFlder + "/" + string(imidx);
+            cout << "imname" << "\t" << imname << endl;
+            cv::Mat im = cv::imread(imname);
 
-	int stepbe = 0;
-	int stepen = 60000;
-	int step = 0;
+            cv::imwrite("/home/taehokim/workspace/project/NLOSRender/render-mnist/re.png", im);
+            string name = "obj.obj";
 
-	for (int i = 0; i< 10; i++) {
-		char imidx[50];
-		sprintf(imidx, "im%05d.png", i);
-		string imname = parentFlder + "/" + string(imidx);
-		cout << "imname" << "\t" << imname << endl;
-		cv::Mat im = cv::imread(imname);
-//		cv::imshow("img", im);
-		cv::imwrite("/home/taehokim/workspace/project/NLOSRender/render-mnist/re.png", im);
-		string name = "obj.obj";
+            bool suc = true;
+            mesh tmpobj = tmp->loadobj(workingDir, name, suc);
+            if (!suc) {
+                continue;
+            } else {
 
-		bool suc = true;
-		mesh tmpobj = tmp->loadobj(workingDir, name, suc);
-		if (!suc) {
-			continue;
-		} else {
+                step++;
+                if (!(step >= stepbe && step < stepen))
+                    continue;
 
-			step++;
-			if (!(step >= stepbe && step < stepen))
-				continue;
+                tmp->loadmesh(tmpobj);
 
-			tmp->loadmesh(tmpobj);
+                int rnum = 2;
+                int lvnum = 7;
+                int lhnum = 7;
+                int shininesslevel = 0;
+                for (shininesslevel = 0; shininesslevel < 1; shininesslevel++) {
 
-			int rnum = 2;
-			int lvnum = 7;
-			int lhnum = 7;
-			int shininesslevel = 0;
-			for (shininesslevel = 0; shininesslevel < 1; shininesslevel++) {
+                    int pos = imname.find_last_of('/');
+                    string svfolder = parentSvFolder + "/"
+                                      + to_string(shininesslevel) + "/"
+                                      + imname.substr(pos + 1,
+                                                      imname.length() - pos - 5);
+                    cout << imname << "\t" << name << endl;
+                    cout << "svfolder\t" << svfolder << endl;
 
-				int pos = imname.find_last_of('/');
-				string svfolder = parentSvFolder + "/"
-						+ to_string(shininesslevel) + "/"
-						+ imname.substr(pos + 1,
-								imname.length() - pos - 5);
-				cout << imname << "\t" << name << endl;
-				cout << "svfolder\t" << svfolder << endl;
+                    char cmd[256];
+                    sprintf(cmd, "mkdir %s", svfolder.c_str());
+                    system(cmd);
 
-				char cmd[256];
-				sprintf(cmd, "mkdir %s", svfolder.c_str());
-				system(cmd);
+                    int sz = maxsz;
+                    int hnum = maxsz * (2 + shininesslevel);
+                    int vnum = maxsz * (2 + shininesslevel);
 
-				int sz = maxsz;
-				int hnum = maxsz * (2 + shininesslevel);
-				int vnum = maxsz * (2 + shininesslevel);
+                    tmp->display(svfolder, tmpobj, shininesslevel, sz, rnum, lhnum,
+                                 lvnum, hnum, vnum);
+                }
 
-				tmp->display(svfolder, tmpobj, shininesslevel, sz, rnum, lhnum,
-						lvnum, hnum, vnum);
-			}
+                tmp->deletemesh();
+            }
+        }
 
-			tmp->deletemesh();
-		}
-	}
 
-	delete tmp;
+        delete tmp;
 
-	cout << "done!" << endl;
-	return 0;
+        cout << "done!" << endl;
+        return 0;
+    }else{
+        std::cout << "good" << std::endl;
+
+        int height = 256;
+        int width = 256;
+
+        int maxsz = 50;
+
+        render *tmp = new render(height, width, maxsz);
+        tmp->initializecuda();
+        tmp->programobj();
+
+        string name = "cat.obj";
+
+        bool suc = true;
+        mesh tmpobj = tmp->loadobj(workingDir, name, suc);
+
+        tmp->loadmesh(tmpobj);
+
+        int rnum = 2;
+        int lvnum = 7;
+        int lhnum = 7;
+        int shininesslevel = 0;
+        for (shininesslevel = 0; shininesslevel < 1; shininesslevel++) {
+
+            cout << "svfolder\t" << tempSvFolder << endl;
+
+            char cmd[256];
+            sprintf(cmd, "mkdir %s", tempSvFolder.c_str());
+            system(cmd);
+
+            int sz = maxsz;
+            int hnum = maxsz * (2 + shininesslevel);
+            int vnum = maxsz * (2 + shininesslevel);
+
+            tmp->display(tempSvFolder, tmpobj, shininesslevel, sz, rnum, lhnum,
+                         lvnum, hnum, vnum);
+        }
+
+        tmp->deletemesh();
+
+
+
+
+        delete tmp;
+
+        cout << "done!" << endl;
+        return 0;
+    }
 }
 

@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/taehokim/workspace/project/NLOSRender/render-mnist/src/main.cpp
+iostream
+-
+vector
+-
+string
+-
+fstream
+-
+renderclass.h
+/home/taehokim/workspace/project/NLOSRender/render-mnist/src/renderclass.h
+
+/home/taehokim/workspace/project/NLOSRender/render-mnist/src/renderclass.h
+iostream
+-
+vector
+-
+string
+-
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+opencv2/core.hpp
+-
+opencv2/highgui.hpp
+-
+opencv2/imgproc.hpp
+-
+opencv2/calib3d.hpp
+-
+opencv2/opencv.hpp
+-
+

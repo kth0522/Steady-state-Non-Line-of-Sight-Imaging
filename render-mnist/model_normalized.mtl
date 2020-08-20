@@ -7,5 +7,5 @@ Ka 0 0 0
 Ks 0.4 0.4 0.4
 Ns 10
 illum 2
-map_Kd ./re.png
+map_Kd re.png
 

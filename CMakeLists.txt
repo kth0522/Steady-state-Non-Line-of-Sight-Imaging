@@ -20,7 +20,12 @@ add_executable(NLOSRender
         render-mnist/src/display_5_draw.cpp
         render-mnist/src/display_6_render.cpp
         render-mnist/src/main.cpp
-        render-mnist/src/renderclass.h)
+        render-mnist/src/renderclass.h
+        render-mnist/model_normalized.mtl
+        render-mnist/p2.fragmentshader
+        render-mnist/p2.vertexshader
+        render-mnist/pointlight.fragmentshader
+        render-mnist/pointlight.vertexshader)
 
 target_link_libraries(NLOSRender
         ${OpenCV_LIBS}

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="NLOSRender"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\share\;CMake Files\..\..\..\..\..\usr\share\OpenCV\;CMake Files\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\glfw3\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/taehokim/workspace/project/NLOSRender/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/taehokim/workspace/project/NLOSRender/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/taehokim/workspace/project/NLOSRender/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="NLOSRender">
+				<Option output="/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/NLOSRender" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/taehokim/workspace/project/NLOSRender/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGLFW_DLL"/>
+					<Add directory="/home/taehokim/workspace/project/NLOSRender/render-mnist"/>
+					<Add directory="/home/taehokim/workspace/project/NLOSRender/render-mnist/src"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 NLOSRender"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="NLOSRender/fast">
+				<Option output="/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/NLOSRender" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/taehokim/workspace/project/NLOSRender/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGLFW_DLL"/>
+					<Add directory="/home/taehokim/workspace/project/NLOSRender/render-mnist"/>
+					<Add directory="/home/taehokim/workspace/project/NLOSRender/render-mnist/src"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 NLOSRender/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/taehokim/workspace/project/NLOSRender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/model_normalized.mtl">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/p2.fragmentshader">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/p2.vertexshader">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/pointlight.fragmentshader">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/pointlight.vertexshader">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/src/display_0_initial.cpp">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/src/display_1_cam.cpp">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/src/display_2_fbo.cpp">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/src/display_3_program.cpp">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/src/display_4_loaddata.cpp">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/src/display_5_draw.cpp">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/src/display_6_render.cpp">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/src/main.cpp">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/render-mnist/src/renderclass.h">
+			<Option target="NLOSRender"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/../../../../../usr/share/OpenCV/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/../../../../../usr/share/OpenCV/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/../../../../../usr/share/OpenCV/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/../../../../../usr/share/OpenCV/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/../../../../../usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\glfw3\"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/../../../../../usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\glfw3\"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/../../../../../usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets-none.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\glfw3\"/>
+		</Unit>
+		<Unit filename="/home/taehokim/workspace/project/NLOSRender/../../../../../usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\glfw3\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
